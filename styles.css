@@ -646,66 +646,134 @@ ul {
 }
 
 /* ============================================
-   TESTIMONIALS
+   TESTIMONIALS — Quote Carousel
    ============================================ */
-.testimonials-grid {
-  max-width: 600px;
+.carousel {
+  position: relative;
+  max-width: 700px;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.quote-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(140, 198, 63, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px 40px;
+  text-align: center;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
 }
 
-.testimonial-bubble {
+.quote-mark {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 80px;
+  line-height: 1;
+  color: var(--green);
+  opacity: 0.3;
+  position: absolute;
+  top: 12px;
+  right: 28px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.quote-card blockquote {
   position: relative;
-  background: var(--wa-bubble);
-  border-radius: var(--radius) var(--radius) var(--radius-sm) var(--radius);
-  padding: 14px 18px;
-  max-width: 88%;
-  align-self: flex-start;
+  z-index: 1;
 }
 
-.testimonial-bubble:nth-child(even) {
-  align-self: flex-end;
+.quote-card blockquote p {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
 }
 
-.bubble-content p {
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 4px;
-}
-
-.bubble-content p:last-child {
+.quote-card blockquote p:last-child {
   margin-bottom: 0;
 }
 
-.bubble-meta {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 6px;
+.quote-card .quote-highlight {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 20px;
 }
 
-.bubble-time {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.bubble-tail {
+/* Carousel Buttons */
+.carousel-btn {
   position: absolute;
-  bottom: 0;
-  right: -8px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 12px 12px;
-  border-color: transparent transparent var(--wa-bubble) transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 2;
 }
 
-.testimonial-bubble:nth-child(even) .bubble-tail {
-  right: auto;
-  left: -8px;
-  border-width: 0 12px 12px 0;
-  border-color: transparent var(--wa-bubble) transparent transparent;
+.carousel-btn:hover {
+  background: var(--green);
+  color: #000;
+  border-color: var(--green);
+}
+
+.carousel-prev {
+  right: -22px;
+}
+
+.carousel-next {
+  left: -22px;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background: var(--green);
+  transform: scale(1.2);
 }
 
 /* ============================================
@@ -917,9 +985,7 @@ ul {
 .gallery-grid .gallery-item:nth-child(3) { transition-delay: 0.2s; }
 .gallery-grid .gallery-item:nth-child(4) { transition-delay: 0.3s; }
 
-.testimonials-grid .testimonial-bubble:nth-child(2) { transition-delay: 0.15s; }
-.testimonials-grid .testimonial-bubble:nth-child(3) { transition-delay: 0.3s; }
-.testimonials-grid .testimonial-bubble:nth-child(4) { transition-delay: 0.45s; }
+/* (carousel has its own animation) */
 
 /* ============================================
    RESPONSIVE
@@ -1009,8 +1075,20 @@ ul {
     gap: 8px;
   }
 
-  .testimonial-bubble {
-    max-width: 95%;
+  .quote-card {
+    padding: 40px 24px 32px;
+  }
+
+  .quote-card blockquote p {
+    font-size: 16px;
+  }
+
+  .quote-card .quote-highlight {
+    font-size: 18px;
+  }
+
+  .carousel-btn {
+    display: none;
   }
 
   .contact-form-wrap {

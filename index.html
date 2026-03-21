@@ -245,53 +245,58 @@
         <span class="section-tag">המלצות</span>
         <h2 class="section-title">מה אומרים המתאמנים</h2>
       </div>
-      <div class="testimonials-grid">
+      <div class="carousel reveal" id="testimonialCarousel">
+        <div class="carousel-track" id="carouselTrack">
 
-        <div class="testimonial-bubble reveal">
-          <div class="bubble-content">
-            <p>הייתי חייב את זה לעצמי באמת הרגשתי שמגיע לי התוצאה הזאת</p>
-            <p>אבל שום דבר לא היה קורה בלעדייך אחי באמת</p>
-            <p>תודה על הכל גד אין עלייך בעולם 🙏</p>
+          <div class="carousel-slide">
+            <div class="quote-card">
+              <div class="quote-mark">"</div>
+              <blockquote>
+                <p>הייתי חייב את זה לעצמי באמת הרגשתי שמגיע לי התוצאה הזאת. אבל שום דבר לא היה קורה בלעדייך אחי באמת.</p>
+                <p class="quote-highlight">תודה על הכל גד אין עלייך בעולם 🙏</p>
+              </blockquote>
+            </div>
           </div>
-          <div class="bubble-meta">
-            <span class="bubble-time">09:07</span>
+
+          <div class="carousel-slide">
+            <div class="quote-card">
+              <div class="quote-mark">"</div>
+              <blockquote>
+                <p>ממצב דיכאוני שאני מתחת למשקל שהוא בריא, בקושי אוכל — למצב שאני במשקל בריא, אוכל נכון, עם גוף שאני אוהב ונהנה גם לפתח.</p>
+                <p class="quote-highlight">התוצאות מדברות בעד עצמן. אתה מקצוען אחי ❤️👏</p>
+              </blockquote>
+            </div>
           </div>
-          <div class="bubble-tail"></div>
+
+          <div class="carousel-slide">
+            <div class="quote-card">
+              <div class="quote-mark">"</div>
+              <blockquote>
+                <p>גד תודה רבה על הכל אחי לא מובן מאליו. האכפתיות והדאגה שלך —</p>
+                <p class="quote-highlight">וואלה הפכת אותי למשהו שבחיים לא חשבתי שאהיה</p>
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="quote-card">
+              <div class="quote-mark">"</div>
+              <blockquote>
+                <p class="quote-highlight">אחלה אימונים, בנית לי בדיוק מה שחשבתי. זה ממש הכיוון.</p>
+              </blockquote>
+            </div>
+          </div>
+
         </div>
 
-        <div class="testimonial-bubble reveal">
-          <div class="bubble-content">
-            <p>אח יקר רציתי קצת לפרגן לך אנחנו אומנם עוד בתהליך ויש לנו עוד דרך אבל שתדע שאני עף עף על המצב שאני נמצא בו ממצב דיכאוני שאני מתחת למשקל שהוא בריא בקושי אוכל ואם אוכל אז זה ג׳אנק וכל השיט הזה</p>
-            <p>למצב שאני במשקל בריא אוכל נכון עם גוף שאני אוהב ונהנה גם לפתח שזה הכי חשוב לי בתהליך לאהוב אותו ולהנות ממנו</p>
-            <p>התוצאות מדברות בעד עצמן המחמאות לא מפסיקות להגיע ובקיצור אתה מקצוען אחי אוהב מלא יא גבר ❤️👏</p>
-          </div>
-          <div class="bubble-meta">
-            <span class="bubble-time">23:26</span>
-          </div>
-          <div class="bubble-tail"></div>
-        </div>
+        <button class="carousel-btn carousel-prev" aria-label="הקודם">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" aria-label="הבא">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
 
-        <div class="testimonial-bubble reveal">
-          <div class="bubble-content">
-            <p>גד תודה רבה על הכל אחי לא מובן מאליו</p>
-            <p>האכפתיות והדאגה שלך וואלה הפכת אותי למשהו שבחיים לא חשבתי שאהיה</p>
-          </div>
-          <div class="bubble-meta">
-            <span class="bubble-time">18:44</span>
-          </div>
-          <div class="bubble-tail"></div>
-        </div>
-
-        <div class="testimonial-bubble reveal">
-          <div class="bubble-content">
-            <p>אההה ועוד משהו אחלה אימונים בנית לי בדיוק מה שחשבתי זה ממש הכיוון</p>
-          </div>
-          <div class="bubble-meta">
-            <span class="bubble-time">20:34</span>
-          </div>
-          <div class="bubble-tail"></div>
-        </div>
-
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
     </div>
   </section>
