@@ -21,8 +21,8 @@
   --text-secondary: #A0A0A0;
   --text-muted: #666666;
 
-  --wa-bubble: #005C4B;
-  --wa-bubble-light: #025144;
+  --wa-bubble: #202C33;
+  --wa-bubble-light: #1A252B;
 
   --font-heading: 'Heebo', sans-serif;
   --font-body: 'Assistant', 'Heebo', sans-serif;
@@ -429,34 +429,28 @@ ul {
 /* ============================================
    ABOUT
    ============================================ */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+.about-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-.about-image {
-  position: relative;
+.about-photo {
+  flex-shrink: 0;
+  width: 240px;
 }
 
-.about-image img {
-  border-radius: var(--radius-lg);
+.about-photo img {
   width: 100%;
   aspect-ratio: 3/4;
   object-fit: cover;
+  object-position: center 20%;
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(140, 198, 63, 0.2);
 }
 
-.about-image-accent {
-  position: absolute;
-  top: -12px;
-  right: -12px;
-  width: 100%;
-  height: 100%;
-  border: 2px solid var(--green);
-  border-radius: var(--radius-lg);
-  z-index: -1;
-  opacity: 0.4;
+.about-text {
+  flex: 1;
 }
 
 .about-role {
@@ -467,12 +461,12 @@ ul {
   margin-bottom: 24px;
 }
 
-.about-content p {
+.about-text p {
   color: var(--text-secondary);
   margin-bottom: 16px;
 }
 
-.about-content strong {
+.about-text strong {
   color: var(--text-primary);
 }
 
@@ -591,11 +585,37 @@ ul {
 /* ============================================
    GALLERY
    ============================================ */
+/* --- Section Background Image --- */
+.section-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.55);
+  z-index: 0;
+}
+
+.section-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+#contact.section-bg {
+  background-size: cover;
+  background-position: center 30%;
+}
+
+/* --- Gallery --- */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 220px;
-  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 320px 320px;
+  gap: 14px;
 }
 
 .gallery-item {
@@ -615,8 +635,14 @@ ul {
   transform: scale(1.05);
 }
 
-.gallery-item-tall {
-  grid-row: span 2;
+/* Gym: show full head */
+.gallery-item:nth-child(1) img {
+  object-position: center 15%;
+}
+
+/* Handstand: show hands (bottom of photo) */
+.gallery-item:nth-child(3) img {
+  object-position: center 85%;
 }
 
 /* ============================================
@@ -887,11 +913,9 @@ ul {
 .what-grid .what-card:nth-child(5) { transition-delay: 0.4s; }
 .what-grid .what-card:nth-child(6) { transition-delay: 0.5s; }
 
-.gallery-grid .gallery-item:nth-child(2) { transition-delay: 0.08s; }
-.gallery-grid .gallery-item:nth-child(3) { transition-delay: 0.16s; }
-.gallery-grid .gallery-item:nth-child(4) { transition-delay: 0.24s; }
-.gallery-grid .gallery-item:nth-child(5) { transition-delay: 0.32s; }
-.gallery-grid .gallery-item:nth-child(6) { transition-delay: 0.40s; }
+.gallery-grid .gallery-item:nth-child(2) { transition-delay: 0.1s; }
+.gallery-grid .gallery-item:nth-child(3) { transition-delay: 0.2s; }
+.gallery-grid .gallery-item:nth-child(4) { transition-delay: 0.3s; }
 
 .testimonials-grid .testimonial-bubble:nth-child(2) { transition-delay: 0.15s; }
 .testimonials-grid .testimonial-bubble:nth-child(3) { transition-delay: 0.3s; }
@@ -912,14 +936,22 @@ ul {
     display: block;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .about-layout {
+    display: block;
   }
 
-  .about-image {
-    max-width: 400px;
-    margin: 0 auto;
+  .about-layout::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .about-photo {
+    float: left;
+    width: 140px;
+    margin-left: 0;
+    margin-right: 20px;
+    margin-bottom: 12px;
   }
 
   .what-grid {
@@ -927,7 +959,7 @@ ul {
   }
 
   .gallery-grid {
-    grid-auto-rows: 180px;
+    grid-template-rows: 260px 260px;
   }
 
   .contact-grid {
@@ -973,13 +1005,8 @@ ul {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 160px;
+    grid-template-rows: 220px 220px;
     gap: 8px;
-  }
-
-  .gallery-item-tall {
-    grid-row: span 2;
   }
 
   .testimonial-bubble {
