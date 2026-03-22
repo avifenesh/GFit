@@ -710,7 +710,6 @@ ul {
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 320px 320px;
   gap: 14px;
 }
 
@@ -718,6 +717,7 @@ ul {
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
+  aspect-ratio: 3/4;
 }
 
 .gallery-item img {
@@ -1205,7 +1205,7 @@ ul {
   }
 
   .gallery-grid {
-    grid-template-rows: 260px 260px;
+    gap: 10px;
   }
 
   .contact-grid {
@@ -1251,7 +1251,6 @@ ul {
   }
 
   .gallery-grid {
-    grid-template-rows: 220px 220px;
     gap: 8px;
   }
 
