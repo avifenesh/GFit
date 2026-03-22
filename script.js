@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (message) waMessage += `\n${message}`;
 
     // Replace with Gad's actual number
-    const waNumber = '972XXXXXXXXX';
+    const waNumber = '9720556624880';
     const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
 
     window.open(waUrl, '_blank');

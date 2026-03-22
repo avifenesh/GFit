@@ -405,9 +405,10 @@ ul {
 
 .hero-desc {
   font-size: 17px;
-  color: var(--text-secondary);
+  color: #d0d0d0;
   margin-bottom: 36px;
   line-height: 1.8;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .scroll-indicator {
@@ -675,6 +676,14 @@ ul {
   z-index: 1;
 }
 
+#who.section-bg {
+  background-position: center 60%;
+}
+
+#who .section-bg-overlay {
+  background: rgba(10, 10, 10, 0.75);
+}
+
 #contact.section-bg {
   background-size: cover;
   background-position: center 30%;
@@ -865,6 +874,16 @@ ul {
   font-size: 18px;
   margin-bottom: 28px;
   line-height: 1.8;
+}
+
+.contact-quote {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--green);
+  margin-bottom: 24px;
+  opacity: 0.85;
 }
 
 .whatsapp-direct {
