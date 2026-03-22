@@ -476,6 +476,18 @@ ul {
   font-style: italic;
 }
 
+.proof-link {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--green);
+  transition: var(--transition);
+}
+
+.proof-link:hover {
+  opacity: 0.8;
+}
+
 .proof-divider {
   width: 1px;
   height: 36px;
