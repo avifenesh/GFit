@@ -4,8 +4,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Navbar scroll effect ---
+  // --- Navbar scroll effect & Sticky CTA ---
   const navbar = document.getElementById('navbar');
+  const stickyCta = document.getElementById('stickyCta');
+  const contactSection = document.getElementById('contact');
   let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
@@ -15,6 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       navbar.classList.remove('scrolled');
     }
+
+    // Show sticky CTA after scrolling past hero, hide when contact section is visible
+    if (stickyCta) {
+      const contactTop = contactSection.getBoundingClientRect().top;
+      const pastHero = currentScroll > window.innerHeight * 0.8;
+      const nearContact = contactTop < window.innerHeight;
+      stickyCta.classList.toggle('visible', pastHero && !nearContact);
+    }
+
     lastScroll = currentScroll;
   }, { passive: true });
 

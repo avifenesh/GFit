@@ -406,8 +406,16 @@ ul {
 .hero-desc {
   font-size: 17px;
   color: #d0d0d0;
-  margin-bottom: 36px;
+  margin-bottom: 12px;
   line-height: 1.8;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-format {
+  font-size: 15px;
+  color: #b0b0b0;
+  margin-bottom: 36px;
+  letter-spacing: 0.5px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
@@ -1295,6 +1303,62 @@ ul {
   .what-footer p br {
     display: none;
   }
+
+  .sticky-cta {
+    bottom: 0;
+    padding: 10px 16px;
+  }
+
+  .sticky-cta-btn {
+    font-size: 15px;
+    padding: 12px 24px;
+  }
+
+  .whatsapp-float {
+    bottom: 70px;
+  }
+}
+
+/* --- Sticky CTA Bar --- */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  padding: 12px 20px;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.6), transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.sticky-cta.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-cta-btn {
+  display: inline-block;
+  background: var(--green);
+  color: #000;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 36px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.sticky-cta-btn:hover {
+  background: var(--green-dark);
 }
 
 /* Small mobile */

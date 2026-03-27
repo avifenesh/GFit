@@ -16,12 +16,31 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "GFit - גד פנש",
-    "description": "מאמן כוח וריצה - תוכניות אימון מותאמות אישית",
+    "description": "מאמן כוח וריצה - תוכניות אימון מותאמות אישית המשלבות חדר כושר, משקלי גוף וריצה",
     "image": "images/hero.jpg",
+    "url": "https://gadfenech.com",
     "telephone": "+972-055-662-4880",
     "areaServed": "ישראל",
-    "serviceType": ["Personal Training", "Strength Training", "Running Coaching"],
-    "sameAs": ["https://instagram.com/gadfenech"]
+    "serviceType": ["Personal Training", "Strength Training", "Running Coaching", "Online Coaching"],
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceType": ["אימונים פרונטליים", "אימונים אונליין"]
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": "שיחת ייעוץ ראשונה",
+      "price": "0",
+      "priceCurrency": "ILS",
+      "description": "שיחת ייעוץ ללא התחייבות"
+    },
+    "sameAs": ["https://instagram.com/gadfenech"],
+    "knowsLanguage": ["he", "en"],
+    "founder": {
+      "@type": "Person",
+      "name": "גד פנש",
+      "jobTitle": "מאמן כוח וריצה",
+      "description": "מאמן כוח וריצה, סרן במיל׳, ספורטאי טבעוני"
+    }
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,6 +101,7 @@
       <p class="hero-desc">
         כוח, ריצה ומשקל גוף — תוכנית אחת, מותאמת אליכם.
       </p>
+      <p class="hero-format">אימונים פרונטליים או אונליין</p>
       <a href="#contact" class="btn btn-primary btn-lg">שיחת ייעוץ ראשונה — חינם</a>
     </div>
     <div class="scroll-indicator">
@@ -116,7 +136,7 @@
         <div class="about-text">
           <span class="section-tag">קצת עליי</span>
           <h2 class="section-title">גד פנש</h2>
-          <h3 class="about-role">מאמן כוח וריצה · סרן במיל׳ · 🌱 ספורטאי טבעוני</h3>
+          <h3 class="about-role">מאמן כוח וריצה · סרן במיל׳ · ספורטאי טבעוני</h3>
           <p>
             אני גד פנש, בן 26. לוחם וקצין לשעבר בחטיבת כפיר, כיום סרן במיל׳.
           </p>
@@ -128,7 +148,6 @@
             תוכנית אימון טובה לא אמורה להיות תבנית קבועה.
             היא צריכה להיות מותאמת לאדם — למטרות שלו, ללוז שלו, ולמה שהוא באמת יכול להתמיד בו.
           </p>
-          <a href="#contact" class="btn btn-primary about-cta">רוצים להתחיל? דברו איתי</a>
         </div>
       </div>
     </div>
@@ -263,9 +282,6 @@
         <div class="gallery-item reveal">
           <img src="images/track-sitting.jpg" alt="מנוחה על מסלול" loading="lazy">
         </div>
-      </div>
-      <div class="gallery-cta reveal">
-        <a href="#contact" class="btn btn-primary">שיחת ייעוץ ראשונה — חינם</a>
       </div>
     </div>
   </section>
@@ -460,6 +476,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Sticky CTA Bar -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#contact" class="sticky-cta-btn">שיחת ייעוץ ראשונה — חינם</a>
+  </div>
 
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/9720556624880?text=%D7%94%D7%99%D7%99%20%D7%92%D7%93%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5"
