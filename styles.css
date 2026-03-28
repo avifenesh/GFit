@@ -1122,6 +1122,7 @@ ul {
   position: fixed;
   bottom: 28px;
   left: 28px;
+  transition: bottom 0.4s ease;
   width: 60px;
   height: 60px;
   background: #25D366;
@@ -1342,6 +1343,10 @@ ul {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
+}
+
+.sticky-cta.visible ~ .whatsapp-float {
+  bottom: 80px;
 }
 
 .sticky-cta-btn {
