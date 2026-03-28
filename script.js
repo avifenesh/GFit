@@ -4,10 +4,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Navbar scroll effect & Sticky CTA ---
+  // --- Navbar scroll effect & Sticky CTA & WhatsApp visibility ---
   const navbar = document.getElementById('navbar');
   const stickyCta = document.getElementById('stickyCta');
   const contactSection = document.getElementById('contact');
+  const waFloat = document.querySelector('.whatsapp-float');
   let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
@@ -18,12 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar.classList.remove('scrolled');
     }
 
-    // Show sticky CTA after scrolling past hero, hide when contact section is visible
+    const contactTop = contactSection.getBoundingClientRect().top;
+    const pastHero = currentScroll > window.innerHeight * 0.8;
+    const nearContact = contactTop < window.innerHeight;
+
+    // Show sticky CTA after hero, hide near contact
     if (stickyCta) {
-      const contactTop = contactSection.getBoundingClientRect().top;
-      const pastHero = currentScroll > window.innerHeight * 0.8;
-      const nearContact = contactTop < window.innerHeight;
       stickyCta.classList.toggle('visible', pastHero && !nearContact);
+    }
+
+    // Hide WhatsApp float near contact section
+    if (waFloat) {
+      waFloat.style.opacity = nearContact ? '0' : '';
+      waFloat.style.pointerEvents = nearContact ? 'none' : '';
     }
 
     lastScroll = currentScroll;
