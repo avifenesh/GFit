@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Contact form → Email (Web3Forms) + WhatsApp ---
+  // --- Contact form → Email (Web3Forms) ---
   const form = document.getElementById('contactForm');
   const submitBtn = form.querySelector('button[type="submit"]');
 
@@ -110,12 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const phone = document.getElementById('phone').value.trim();
     const message = document.getElementById('message').value.trim();
 
-    // Send to email via Web3Forms
     submitBtn.disabled = true;
     submitBtn.textContent = 'שולח...';
 
     try {
-      await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -127,22 +126,21 @@ document.addEventListener('DOMContentLoaded', () => {
           message
         })
       });
+
+      if (res.ok) {
+        submitBtn.textContent = 'נשלח בהצלחה ✓';
+        form.reset();
+        setTimeout(() => { submitBtn.textContent = 'לתיאום שיחת ייעוץ'; }, 3000);
+      } else {
+        submitBtn.textContent = 'שגיאה, נסו שוב';
+        setTimeout(() => { submitBtn.textContent = 'לתיאום שיחת ייעוץ'; }, 3000);
+      }
     } catch (_) {
-      // Email send failed silently — WhatsApp still opens
+      submitBtn.textContent = 'שגיאה, נסו שוב';
+      setTimeout(() => { submitBtn.textContent = 'לתיאום שיחת ייעוץ'; }, 3000);
     }
 
-    // Also open WhatsApp
-    let waMessage = `היי גד, אשמח לשיחת ייעוץ\n`;
-    waMessage += `שם: ${name}\n`;
-    if (phone) waMessage += `טלפון: ${phone}\n`;
-    if (message) waMessage += `\n${message}`;
-
-    const waNumber = '9720556624880';
-    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
-
-    window.open(waUrl, '_blank');
     submitBtn.disabled = false;
-    submitBtn.textContent = 'לתיאום שיחת ייעוץ';
   });
 
   // --- Testimonials Carousel ---
