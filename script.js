@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (res.ok) {
         submitBtn.textContent = 'נשלח בהצלחה ✓';
         form.reset();
+        document.dispatchEvent(new Event('gfit:form-success'));
         setTimeout(() => { submitBtn.textContent = 'לתיאום שיחת ייעוץ'; }, 3000);
       } else {
         submitBtn.textContent = 'שגיאה, נסו שוב';
@@ -229,5 +230,89 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { passive: true });
+
+  // --- Analytics (GoatCounter) ---
+  const track = (path, title) => {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path, title, event: true });
+    }
+  };
+
+  // Click events on conversion points
+  document.querySelectorAll('.whatsapp-float').forEach(el =>
+    el.addEventListener('click', () => track('click-whatsapp-float', 'WhatsApp floating button'))
+  );
+  document.querySelectorAll('.whatsapp-direct').forEach(el =>
+    el.addEventListener('click', () => track('click-whatsapp-contact', 'WhatsApp contact-section button'))
+  );
+  document.querySelectorAll('.hero .btn-primary').forEach(el =>
+    el.addEventListener('click', () => track('click-hero-cta', 'Hero CTA'))
+  );
+  document.querySelectorAll('.sticky-cta-btn').forEach(el =>
+    el.addEventListener('click', () => track('click-sticky-cta', 'Sticky CTA'))
+  );
+  document.querySelectorAll('.nav-cta, .mobile-cta').forEach(el =>
+    el.addEventListener('click', () => track('click-nav-cta', 'Nav/mobile CTA'))
+  );
+  document.querySelectorAll('.what-footer .btn').forEach(el =>
+    el.addEventListener('click', () => track('click-what-cta', 'What-you-get CTA'))
+  );
+  document.querySelectorAll('.footer-links a').forEach(el =>
+    el.addEventListener('click', () => {
+      const label = el.getAttribute('aria-label') || 'footer-link';
+      track('click-footer-' + label, 'Footer link: ' + label);
+    })
+  );
+  document.querySelectorAll('.faq-question').forEach((q, i) => {
+    q.addEventListener('click', () => {
+      const text = q.querySelector('span')?.textContent.trim().slice(0, 40) || `faq-${i}`;
+      track('faq-open-' + i, 'FAQ open: ' + text);
+    });
+  });
+  const carouselEl = document.getElementById('testimonialCarousel');
+  if (carouselEl) {
+    carouselEl.querySelector('.carousel-prev')?.addEventListener('click', () =>
+      track('carousel-prev', 'Testimonial prev'));
+    carouselEl.querySelector('.carousel-next')?.addEventListener('click', () =>
+      track('carousel-next', 'Testimonial next'));
+  }
+
+  // Form submit (fire before fetch) + success
+  const contactFormEl = document.getElementById('contactForm');
+  if (contactFormEl) {
+    contactFormEl.addEventListener('submit', () => track('form-submit', 'Contact form submit'), { capture: true });
+  }
+  document.addEventListener('gfit:form-success', () => track('form-success', 'Contact form success'));
+
+  // Scroll depth (fires once per threshold per page load)
+  const depthMarks = [25, 50, 75, 100];
+  const depthFired = new Set();
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollable = doc.scrollHeight - doc.clientHeight;
+    if (scrollable <= 0) return;
+    const pct = (window.scrollY / scrollable) * 100;
+    depthMarks.forEach(mark => {
+      if (pct >= mark && !depthFired.has(mark)) {
+        depthFired.add(mark);
+        track('scroll-' + mark, 'Scroll depth ' + mark + '%');
+      }
+    });
+  }, { passive: true });
+
+  // Section-in-view (fires once per section per page load)
+  const seenSections = new Set();
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        if (id && !seenSections.has(id)) {
+          seenSections.add(id);
+          track('section-view-' + id, 'Section viewed: ' + id);
+        }
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
 
 });

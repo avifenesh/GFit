@@ -828,13 +828,15 @@ ul {
    ============================================ */
 .carousel {
   position: relative;
-  max-width: 700px;
+  max-width: 760px;
   margin: 0 auto;
+  padding: 0 56px;
   overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
+  align-items: stretch;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
@@ -843,6 +845,7 @@ ul {
   min-width: 100%;
   padding: 0 12px;
   box-sizing: border-box;
+  display: flex;
 }
 
 .quote-card {
@@ -852,10 +855,12 @@ ul {
   border-radius: var(--radius-lg);
   padding: 48px 40px 40px;
   text-align: center;
-  min-height: 200px;
+  min-height: 340px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .quote-mark {
@@ -895,6 +900,18 @@ ul {
   font-size: 20px;
 }
 
+.quote-card .quote-author {
+  display: block;
+  margin-top: 20px;
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--green);
+  opacity: 0.9;
+}
+
 /* Carousel Buttons */
 .carousel-btn {
   position: absolute;
@@ -923,11 +940,11 @@ ul {
 }
 
 .carousel-prev {
-  right: -22px;
+  right: 0;
 }
 
 .carousel-next {
-  left: -22px;
+  left: 0;
 }
 
 /* Carousel Dots */
@@ -1265,6 +1282,7 @@ ul {
 
   .quote-card {
     padding: 40px 24px 32px;
+    min-height: 380px;
   }
 
   .quote-card blockquote p {
@@ -1273,6 +1291,11 @@ ul {
 
   .quote-card .quote-highlight {
     font-size: 18px;
+  }
+
+  .quote-card .quote-author {
+    font-size: 14px;
+    margin-top: 16px;
   }
 
   .carousel-btn {
