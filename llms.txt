@@ -1,63 +1,49 @@
-# GFit — גד פנש | אימונים היברידיים
+# GFit | גד פנש, מאמן כוח וריצה
 
-> GFit is the personal training practice of Gad Fenesh (גד פנש), a hybrid-training coach based in Israel. Hybrid training combines strength (gym), bodyweight, and running into a single personalized program. Gad offers both in-person (פרונטלי) and online (אונליין) coaching, in Hebrew and English, with a free introductory consultation.
+> GFit is the coaching practice of Gad Fenesh (גד פנש), a strength and running coach in Israel. He coaches people who want to get stronger and run better at the same time, with a personal plan built around their goals, ability and daily routine. Clients choose combined strength and running coaching, running only, or strength only.
 
 ## About the coach
 
 - **Name**: Gad Fenesh (גד פנש)
-- **Age**: 26
-- **Background**: Former combat soldier and officer in the Kfir Brigade, currently a reserve captain (סרן במיל׳) in the IDF
-- **Athletic history**: Competitive runner from age 12, completed a half-marathon at age 16
-- **Approach**: Rejects template programs. Every plan is built from scratch around the client's goals, current level, schedule, and what they can actually sustain long-term.
-- **Languages**: Hebrew (native), English
+- **Role**: Strength and running coach (מאמן כוח וריצה)
+- **Background**: Reserve captain (סרן במילואים). Graduate of a fitness trainer course, a long-distance running coach course and further courses in the field.
+- **Running community**: Owner of the running group "נוע" (Noa), and setting up "נוע - מתחם wellness".
+- **Why the combination**: For years running cost him muscle mass and strength training weighed on his running. He learned to combine the two properly, and now helps clients progress in both without one coming at the expense of the other.
 - **Instagram**: https://instagram.com/gadfenech
 
-## What GFit offers
+## What the coaching includes
 
-1. **Custom training programs** — built per client, not templates
-2. **Hybrid-discipline mix** — strength, running, and bodyweight combined intelligently (or any single focus)
-3. **Level-appropriate progression** — programs start where the client is and advance with them
-4. **Clear teaching** — the "why" behind exercises and principles, not just the "what"
-5. **Ongoing tracking and adjustments** — plans adapt as the client progresses
-6. **Full availability** — Gad is reachable for questions, doubts, and support throughout
-7. **Nutrition guidance** — works with any eating style; does not enforce a specific diet
+1. Personal strength plan, matched to goals, level and available equipment
+2. Personal running plan, matched to goals, level and ability
+3. Planned combination of strength and running: load and recovery fitted to the training routine
+4. Nutrition guidance matched to goals and the process
+5. Digital training plan in the TrainingPeaks app, synced with the client's watch
+6. Ongoing tracking and adjustments based on progress and how the client feels
+7. Personal support and availability on WhatsApp
+8. Regular check-in calls to review progress, set targets and adjust the plan
+
+Tracks: strength + running, running only, or strength only.
 
 ## Who it's for
 
-- People who want to build a strong, athletic body
-- People who want to combine strength + running + bodyweight (or focus on one)
-- People who want to understand *how* to train correctly, not just do exercises
-- People looking for a plan tailored personally to them
-- People who want a training routine they can sustain over time
-- People who want nutrition guidance that fits their lifestyle
+Beginners and people who have trained for years:
 
-## Service details
+- People who want to start running or improve their running performance
+- People who want to get stronger, build muscle and progress in strength training
+- People who want to combine strength and running without one hurting the other
+- People who want a consistent training routine instead of starting over each time
+- People preparing for a specific goal: a race, a personal best or a strength target
 
-- **Location**: Israel (ישראל) — in-person sessions + online coaching available worldwide (Hebrew/English)
-- **Contact**: WhatsApp +972-55-662-4880
-- **Contact form**: https://gfit.energy/#contact (sends to email)
-- **First consultation**: Free, no commitment
-- **Price**: Not publicly listed; discussed during the first consultation
+## Client results
 
-## Frequently asked questions
+- **Shachar**: half marathon 1:36, 10 km 41:39, 5 km 19:56, and 5 kg of muscle mass gained.
+- **Noam Ohana**: lost 13 kg, went from running 3 km to a half marathon, and reached his goal of 5 km in 23:50.
 
-**Q: Is this suitable for complete beginners?**
-A: Yes. The program is tailored to the client's level — whether starting from zero or already training for years.
+## Contact
 
-**Q: What does the process look like?**
-A: Start with a short free consultation to understand goals, level, and schedule. Gad then builds a custom plan and provides ongoing coaching, tracking, and availability.
-
-**Q: Online or in-person?**
-A: Both. Online suits clients who want flexibility; in-person suits those who prefer face-to-face sessions.
-
-**Q: How many sessions per week?**
-A: Depends on goals and schedule. Plans are built around what the client can realistically sustain — consistency beats volume.
-
-**Q: Is nutrition guidance included?**
-A: Yes. Works with any diet type.
-
-**Q: What makes this different from other trainers?**
-A: No fixed templates. Every program is built from scratch. Combines strength + running + bodyweight in a way most trainers don't. Full availability for questions.
+- **Contact form**: https://gfit.energy/#contact (name, phone, main goal; Gad calls back for an introductory talk)
+- **WhatsApp**: +972-55-662-4880
+- **Price**: not listed; discussed in the introductory talk
 
 ## Canonical URLs
 
