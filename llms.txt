@@ -1,6 +1,6 @@
 # GFit | גד פנש, מאמן כוח וריצה
 
-> GFit is the coaching practice of Gad Fenesh (גד פנש), a strength and running coach in Israel. He coaches people who want to get stronger and run better at the same time, with a personal plan built around their goals, ability and daily routine. Clients choose combined strength and running coaching, running only, or strength only.
+> GFit is the coaching practice of Gad Fenesh (גד פנש), a strength and running coach in Israel. He coaches people who want to get stronger and run better at the same time, with a personal plan built around their goals, ability and daily routine. Clients choose combined strength and running coaching, running only, or strength only, in person or online. The first introductory talk is free.
 
 ## About the coach
 
@@ -23,6 +23,7 @@
 8. Regular check-in calls to review progress, set targets and adjust the plan
 
 Tracks: strength + running, running only, or strength only.
+Format: in-person training or online coaching.
 
 ## Who it's for
 
@@ -41,7 +42,7 @@ Beginners and people who have trained for years:
 
 ## Contact
 
-- **Contact form**: https://gfit.energy/#contact (name, phone, main goal; Gad calls back for an introductory talk)
+- **Contact form**: https://gfit.energy/#contact (name, phone, main goal; Gad calls back for a free introductory talk)
 - **WhatsApp**: +972-55-662-4880
 - **Price**: not listed; discussed in the introductory talk
 

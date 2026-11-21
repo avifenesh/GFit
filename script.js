@@ -1,4 +1,4 @@
-// GFit site behavior: nav state, mobile bar, reveal, goal chips, contact form, analytics.
+// GFit site behavior: nav state, mobile bar, goal chips, contact form, analytics.
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const bar = document.getElementById('bar');
@@ -17,17 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; syncBar(); }).observe(hero);
   new IntersectionObserver(([e]) => { contactVisible = e.isIntersecting; syncBar(); }).observe(contact);
 
-  // Reveal on scroll.
-  const targets = document.querySelectorAll(
-    '.head, .about-grid > *, .program li, .tracks, .fit-list li, .result, .quotes figure, .contact-grid > *'
-  );
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-  targets.forEach((el) => { el.classList.add('reveal'); io.observe(el); });
-
   // Analytics (GoatCounter events).
   const track = (path, title) => {
     if (window.goatcounter && window.goatcounter.count) {
@@ -36,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   document.querySelectorAll('[data-track]').forEach((el) =>
     el.addEventListener('click', () => track('click-' + el.dataset.track)));
-  document.querySelector('.nav-cta')?.addEventListener('click', () => track('click-nav-cta'));
-
+  
   // Goal chips fill the goal field.
   const goal = document.getElementById('goal');
   const chips = document.querySelectorAll('.chips button');
