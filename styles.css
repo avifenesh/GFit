@@ -94,12 +94,14 @@ svg { flex-shrink: 0; }
 /* Nav */
 .nav {
   position: fixed; inset: 0 0 auto; z-index: 50; height: var(--nav-h);
+  background: rgba(232, 233, 232, .72);
+  backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  box-shadow: 0 1px 0 rgba(26, 29, 34, .06);
   transition: background-color .25s, box-shadow .25s;
 }
 .nav.scrolled {
-  background: rgba(243, 244, 244, .88);
-  backdrop-filter: saturate(1.5) blur(14px); -webkit-backdrop-filter: saturate(1.5) blur(14px);
-  box-shadow: 0 1px 0 var(--line);
+  background: rgba(232, 233, 232, .9);
+  box-shadow: 0 1px 0 rgba(26, 29, 34, .08), 0 8px 24px -16px rgba(26, 29, 34, .3);
 }
 .nav-row { height: 100%; display: flex; align-items: center; gap: 36px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; }
