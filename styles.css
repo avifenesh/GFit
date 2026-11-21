@@ -213,7 +213,6 @@ svg { flex-shrink: 0; }
 .format-q { font-weight: 700; color: #fff; }
 .format-a { display: flex; flex-wrap: wrap; gap: 8px; }
 .pill { padding: 7px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, .28); }
-.pill-on { background: var(--tartan); border-color: var(--tartan); color: #fff; }
 
 /* Fit */
 .fit { padding: clamp(80px, 10vw, 130px) 0; }
