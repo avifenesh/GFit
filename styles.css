@@ -130,19 +130,11 @@ svg { flex-shrink: 0; }
   background:
     repeating-linear-gradient(90deg, rgba(255, 255, 255, .8) 0 3px, transparent 3px 25%),
     linear-gradient(180deg, #3A6FD3, var(--track) 70%);
-  display: grid; grid-template-columns: repeat(4, 1fr); align-items: end;
   overflow: hidden;
   transform-origin: 50% 100%;
 }
-.lanes::after {
-  content: ''; position: absolute; inset: auto 0 64px 0; height: 3px; background: rgba(255, 255, 255, .8);
-}
-.lanes span {
-  font-family: var(--display); font-size: 44px; line-height: 1; color: #fff;
-  text-align: center; padding-bottom: 14px; opacity: .95;
-}
 .hero-photo {
-  position: absolute; inset: 0 11% 90px 11%;
+  position: absolute; inset: 0 11% 48px 11%;
   border-radius: 22px; overflow: hidden; box-shadow: 0 30px 60px -24px rgba(11, 31, 58, .55);
   background: var(--sky);
 }
@@ -379,9 +371,7 @@ svg { flex-shrink: 0; }
   .brand-name { font-size: 30px; }
   .h-display { font-size: clamp(50px, 14vw, 64px); }
   .hero-visual { height: 440px; }
-  .hero-photo { inset: 0 8% 80px 8%; }
-  .lanes::after { bottom: 56px; }
-  .lanes span { font-size: 36px; padding-bottom: 12px; }
+  .hero-photo { inset: 0 8% 40px 8%; }
     .extras { grid-template-columns: 1fr; margin-top: 40px; }
   .extras li { padding: 20px 0; }
   .formats { padding: 22px 20px; }
