@@ -14,7 +14,8 @@
   --tartan: #A9553F;       /* track surface, sampled from the photos */
   --tartan-deep: #8C4333;
   --tartan-soft: #F1E3DE;
-  --rubber: #1E2126;       /* gym rubber floor */
+  --rubber: #2A2D32;       /* gym rubber floor */
+  --concrete: #E8E9E8;     /* tint between the mat and the white sections */
   --gain: #3F8A1E;
 
   --display: 'Karantina', 'IBM Plex Sans Hebrew', sans-serif;
@@ -183,17 +184,31 @@ svg { flex-shrink: 0; }
 }
 
 /* Program */
+/* Gym floor: interlocking rubber tiles laid as a mat on the chalk floor */
 .program {
+  --tile: 120px;
+  margin-inline: clamp(8px, 2vw, 28px);
+  border-radius: clamp(24px, 3vw, 44px);
   padding: clamp(80px, 10vw, 130px) 0;
-  color: rgba(255, 255, 255, .72);
+  color: rgba(244, 242, 239, .74);
   background-color: var(--rubber);
   background-image:
+    /* seams: dark groove with a faint lit edge */
+    linear-gradient(rgba(0, 0, 0, .42) 0 2px, rgba(255, 255, 255, .05) 2px 3px, transparent 3px),
+    linear-gradient(90deg, rgba(0, 0, 0, .42) 0 2px, rgba(255, 255, 255, .05) 2px 3px, transparent 3px),
+    /* neighbouring tiles differ slightly in shade */
+    conic-gradient(rgba(255, 255, 255, .028) 0 25%, transparent 0 50%, rgba(255, 255, 255, .028) 0 75%, transparent 0),
+    /* rubber granules */
     radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1.6px),
-    radial-gradient(rgba(169, 85, 63, .22) 1px, transparent 1.6px);
-  background-size: 9px 9px, 13px 13px;
-  background-position: 0 0, 4px 6px;
+    radial-gradient(rgba(169, 85, 63, .2) 1px, transparent 1.6px);
+  background-size:
+    var(--tile) var(--tile), var(--tile) var(--tile),
+    calc(2 * var(--tile)) calc(2 * var(--tile)),
+    9px 9px, 13px 13px;
+  background-position: center top, center top, center top, 0 0, 4px 6px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .04), 0 30px 60px -40px rgba(26, 29, 34, .6);
 }
-.program .h-display { margin-bottom: 48px; color: #fff; }
+.program .h-display { margin-bottom: 48px; color: #F4F2EF; }
 .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .pillar { position: relative; height: clamp(360px, 36vw, 480px); border-radius: var(--r-lg); overflow: hidden; background: var(--ink); isolation: isolate; }
 .pillar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; z-index: -1; }
@@ -205,17 +220,22 @@ svg { flex-shrink: 0; }
 .extras { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 40px; margin-top: 56px; }
 .extras li { display: flex; gap: 16px; padding: 26px 0; border-top: 1px solid rgba(255, 255, 255, .14); }
 .extras svg { color: #E08B73; margin-top: 2px; }
-.extras h3 { font-size: 18px; margin-bottom: 4px; color: #fff; }
+.extras h3 { font-size: 18px; margin-bottom: 4px; color: #F4F2EF; }
 .extras p { font-size: 15.5px; line-height: 1.6; color: rgba(255, 255, 255, .62); }
 
-.formats { display: flex; flex-wrap: wrap; gap: 16px 56px; margin-top: 40px; padding: 28px 32px; border-radius: var(--r-md); background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1); }
+.formats { display: flex; flex-wrap: wrap; gap: 16px 56px; margin-top: 40px; padding: 28px 32px; border-radius: var(--r-md); background: rgba(42, 45, 50, .85); border: 1px solid rgba(255, 255, 255, .1); }
 .format { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
-.format-q { font-weight: 700; color: #fff; }
+.format-q { font-weight: 700; color: #F4F2EF; }
 .format-a { display: flex; flex-wrap: wrap; gap: 8px; }
-.pill { padding: 7px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, .28); }
+.pill { padding: 7px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; background: rgba(255, 255, 255, .04); color: #F4F2EF; border: 1px solid rgba(255, 255, 255, .22); }
 
 /* Fit */
-.fit { padding: clamp(80px, 10vw, 130px) 0; }
+.fit {
+  margin-top: calc(-1 * clamp(60px, 8vw, 110px));
+  padding: calc(clamp(80px, 10vw, 130px) + clamp(60px, 8vw, 110px)) 0 clamp(80px, 10vw, 130px);
+  background: linear-gradient(180deg, var(--chalk) 0, var(--concrete) 16%, var(--chalk) 62%);
+}
+.program { position: relative; z-index: 1; }
 .fit-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
 .fit-head { position: sticky; top: calc(var(--nav-h) + 24px); }
 .fit-head p { margin-top: 24px; font-size: 19px; max-width: 26em; }
@@ -227,7 +247,7 @@ svg { flex-shrink: 0; }
 .fit-list svg { width: 30px; height: 30px; padding: 6px; border-radius: 50%; background: var(--tartan); color: #fff; transform: translateY(6px); }
 
 /* Results */
-.results { padding: clamp(80px, 10vw, 130px) 0; background: var(--white); }
+.results { padding: clamp(80px, 10vw, 130px) 0; background: linear-gradient(180deg, var(--white) 70%, var(--tartan-soft)); }
 .results .h-display { margin-bottom: 56px; }
 .story { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(28px, 4vw, 64px); align-items: center; }
 .story + .story { margin-top: clamp(56px, 7vw, 96px); }
@@ -280,8 +300,8 @@ svg { flex-shrink: 0; }
   padding: clamp(80px, 10vw, 130px) 0;
   color: rgba(255, 255, 255, .9);
   background:
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, .26) 0 2px, transparent 2px 200px),
-    linear-gradient(180deg, #B05B45, var(--tartan-deep));
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .22) 0 2px, transparent 2px 200px),
+    linear-gradient(180deg, #B4634E, #9A4C3A);
 }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
 .contact .h-display { color: #fff; font-size: clamp(52px, 6vw, 84px); }
